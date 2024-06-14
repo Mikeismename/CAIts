@@ -1,8 +1,8 @@
-### README
+### CatBot
 
-## Project Overview
+## Project Overview 
 
-This project involves the creation of a Telegram bot for analyzing Japanese media, which assists users by providing information based on a pre-trained model and additional contextual data stored in JSON files. The bot interacts with users, processes their requests, and provides responses based on the specified year. The project includes data cleaning and preparation of JSON files, integration with Yandex GPT and Yandex Translate API, fine-tuning Yandex GPT, developing algorithms for higher quality translation, and managing interactions through the Telegram bot.
+This project involves the creation of a Telegram bot  for analyzing Japanese media, which assists users by providing information based on a pre-trained model and additional contextual data stored in JSON files. The bot interacts with users, processes their requests, and provides responses based on the specified year. The project includes data cleaning and preparation of JSON files, integration with Yandex GPT and Yandex Translate API, fine-tuning Yandex GPT, developing algorithms for higher quality translation, and managing interactions through the Telegram bot.
 
 ### Project Structure
 
