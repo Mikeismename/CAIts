@@ -1,21 +1,16 @@
 {
     "YANDEX_API_URL": "https://translate.api.cloud.yandex.net/translate/v2/translate",
-    "YANDEX_API_KEY": "YAQVNyo8m_dkk-yA7XDwH4EGxzBlN8SEUvbB_XMi8",
-    "TELEGRAM_BOT_TOKEN": "7353626516:AAEd4DEwWmYfhDU24LYyzLdRLnsRWYU44Yc",
-    "TELEGRAM_BOT_TOKEN2":"7255542592:AAHY0-OIUL7Zrny5MXtheCDwmvpr8JQrb_Q",
+    "YANDEX_API_KEY": "...",
+    "TELEGRAM_BOT_TOKEN": "...",
     "NEWS_BUCKET": "catbot",
-    "NEWS_DIR": "/Users/aleksandratopalidi/Desktop/HackatonProductAI/2019/_0_0.txt", 
     "NEWS_ITEM_CLASS": "news_item_class",
-    "YANDEX_ACCESS_KEY_ID": "YCAJEw10YLipF41fIKffb7lPO",
-    "YANDEX_SECRET_ACCESS_KEY": "YCPibNVTw3DecyeEkUxIFbCHkNG6TcUaUZpPj7aO",
+    "YANDEX_ACCESS_KEY_ID": "...",
+    "YANDEX_SECRET_ACCESS_KEY": "...",
     "S3_BUCKET": "catbot",
-    "YANDEX_TRANSLATE_API_KEY": "AQVN0bz5SsAFMBN1tAvDsb2eQ7WYJRt8PrjThGv2",
-    "ELASTICSEARCH_CLOUD_ID": "My_deployment:dXMtY2VudHJhbDEuZ2NwLmNsb3VkLmVzLmlvOjQ0MyRmMjdhMTNjMDlhZWE0YzRiYjlkZWFlY2MyYWIwOWYwZSRhMmRmYTlhYmMyYTg0YjYxODc2YzdlNDkxM2YwMDQ1OA==",
-    "ELASTICSEARCH_API_KEY": "by1JbkI1QUJKUHQ3YzY2cldNcGQ6M2luZm9uWTNSTDZadHZyVTJaSG1Wdw==",
-    "ELASTIC_PASSWORD": "yIFDMsFOJDq27Pma0rHvmZ8n",
+    "YANDEX_TRANSLATE_API_KEY": "...",
     "FOLDER_ID": "b1g9er26cu5h8ol5sde9",
-    "JSON_BASE_PATH": "/Users/aleksandratopalidi/Desktop/HackatonProductAI/cleaned_json",
-    "IAM_TOKEN": "t1.9euelZqQkozPx8jGkY2bx8aJzMiKnO3rnpWaiZSPkJKWjpWLyc6Qk5vNlZ3l9PcrV1lM-e87QBig3fT3awVXTPnvO0AYoM3n9euelZqPyMjKnIubnY3KycuSkJ6djO_8xeuelZqPyMjKnIubnY3KycuSkJ6djA.FOk6uLTmWvohRvc6p9X-VaPl3x4I8BIbtkq4o52isYl0oEoeIIyoqioW61VtLe-xaz8FYcH5skhizvdBtJE9BQ",
-    "YANDEX_GPT_API_KEY": "AQVN2gPK929FE7u2zFqAwQjHnxH0MrAq9M3uwpVR"
+    "JSON_BASE_PATH": "/cleaned_json",
+    "IAM_TOKEN": "...",
+    "YANDEX_GPT_API_KEY": "..."
     }
     
