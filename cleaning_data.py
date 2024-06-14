@@ -1,10 +1,11 @@
 import os
 import hashlib
 import json
-import requests
 from bs4 import BeautifulSoup, Comment
 import unicodedata
 from warcio.archiveiterator import ArchiveIterator
+import re
+import shutil
 
 # Загрузка конфигурации
 with open('config.json', 'r') as config_file:
@@ -40,6 +41,19 @@ def generate_filename(url, index):
 def normalize_text(text):
     return unicodedata.normalize('NFKC', text)
 
+# Функция очистки текста от повторяющихся ссылок и лишних пробелов
+def clean_text(text):
+    # Удаляем повторяющиеся ссылки
+    text = re.sub(r'(?:(https?://)\S+(?=\s|$))(\1\S+)', r'\1', text)
+    # Удаляем лишние пробелы и пустые строки
+    text = os.linesep.join([s.strip() for s in text.splitlines() if s.strip()])
+    return text
+
+# Функция удаления ссылок на изображения
+def remove_image_links(text):
+    img_pattern = r'\bhttps?://(?:\S+?\.jpg|.*?\.jpg(?:\?.*?)?)\b'
+    return re.sub(img_pattern, '', text)
+
 # Функция обработки и сохранения данных
 def process_and_save_data(base_directory, target_directory):
     seen_texts = set()
@@ -59,8 +73,10 @@ def process_and_save_data(base_directory, target_directory):
                                 payload = record.content_stream().read()
                                 cleaned_text, links = clean_html_and_extract_links(payload.decode('utf-8', errors='ignore'))
                                 normalized_text = normalize_text(cleaned_text)
+                                cleaned_text = clean_text(normalized_text)
+                                final_text = remove_image_links(cleaned_text)
 
-                                text_hash = hashlib.md5(normalized_text.encode('utf-8')).hexdigest()
+                                text_hash = hashlib.md5(final_text.encode('utf-8')).hexdigest()
                                 if text_hash in seen_texts:
                                     continue
                                 seen_texts.add(text_hash)
@@ -71,14 +87,17 @@ def process_and_save_data(base_directory, target_directory):
                                 output_file_path = os.path.join(target_dir, output_file_name)
 
                                 with open(output_file_path, 'w', encoding='utf-8') as output_file:
-                                    output_file.write(normalized_text + "\n\nLinks:\n" + "\n".join(links))
+                                    output_file.write(final_text + "\n\nLinks:\n" + "\n".join(links))
                                     print(f'Очищенный текст из {url} сохранен в {output_file_path}')
 
 # Основная функция
 def main():
-    base_directory = '/private/tmp/unpacked_files'
-    target_directory = '/Users/aleksandratopalidi/Desktop/HackatonProductAI'
+    base_directory = config.get('base_directory', '/private/tmp/unpacked_files')
+    target_directory = config.get('target_directory', '/Users/aleksandratopalidi/Desktop/HackatonProductAI/cleaned')
+    
+    # Обработка и сохранение данных из WARC файлов
     process_and_save_data(base_directory, target_directory)
 
 if __name__ == '__main__':
     main()
+
