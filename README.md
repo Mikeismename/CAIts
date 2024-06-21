@@ -16,6 +16,7 @@ This project involves the creation of a Telegram bot for analyzing Japanese medi
 ├── data
 │   ├── cleaning_data.py
 │   ├── clickhouse.py
+│   ├── vectorizing.py
 │   └── train2019.json
 ├── images
 │   ├── scheme.jpg
