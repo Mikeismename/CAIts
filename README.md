@@ -2,7 +2,7 @@
 
 ## Project Overview 
 
-This project involves the creation of a Telegram bot  for analyzing Japanese media, which assists users by providing information based on a pre-trained model and additional contextual data stored in JSON files. The bot interacts with users, processes their requests, and provides responses based on the specified year. The project includes data cleaning and preparation of JSON files, integration with Yandex GPT and Yandex Translate API, fine-tuning Yandex GPT, developing algorithms for higher quality translation, and managing interactions through the Telegram bot.
+This project involves the creation of a Telegram bot for analyzing Japanese media, which assists users by providing information based on a pre-trained model and additional contextual data stored in JSON files. The bot interacts with users, processes their requests, and provides responses based on the specified year. The project includes data cleaning and preparation of JSON files, integration with Yandex GPT and Yandex Translate API, fine-tuning Yandex GPT, developing algorithms for higher quality translation, and managing interactions through the Telegram bot.
 
 ### Project Structure
 
@@ -14,7 +14,10 @@ This project involves the creation of a Telegram bot  for analyzing Japanese med
 ├── data
 │   ├── cleaning_data.py
 │   └── train2019.json
+├── images
+│   ├── scheme.jpg
 ```
+![Project Structure](images/scheme.jpg)
 
 ### Data Preparation
 
@@ -37,16 +40,46 @@ We cleaned the dataset using the following methods:
 4. **Removing Image Links:**
    - We removed links to images, as they do not provide useful textual information for our analysis.
 
+5. **Text Tokenization and Further Cleaning:**
+   - We used the **sudachipy** library for Japanese text tokenization. This allowed us to properly segment the text into meaningful units.
+   - We employed the **fuzzywuzzy** library for deduplication and similarity checks to ensure the uniqueness of the cleaned text.
+
+### Additional Libraries Used:
+```python
+import os
+import hashlib
+from bs4 import BeautifulSoup, Comment
+import unicodedata
+from warcio.archiveiterator import ArchiveIterator
+import re
+import csv
+from sudachipy import tokenizer, dictionary
+from datetime import datetime
+from fuzzywuzzy import fuzz
+```
 You can view the dataset processing code in
 ```sh
 data/cleaning_data.py
 ```
 Part of the dataset used for training Yandex GPT is available in
 ```sh
-data/train2019.json
+data/train_GPT.json
 ```
 
-The complete cleaned dataset in .JSON format can be found on Yandex Disk at https://disk.yandex.ru/d/JIXB7DPbTNygqg
+The complete cleaned dataset in .csv format can be found on 
+```sh
+data/ja
+```
+
+### Vectorization of Cleaned Data
+After cleaning the data, we used the `transformers` library to vectorize the text data. This step is crucial for converting textual information into numerical vectors that can be used for various NLP tasks, including semantic search and information retrieval.
+
+
+You can view the vectorisation processing code in
+
+```sh
+data/data_embedded.py
+```
 
 ### Technical Implementation
 
@@ -64,9 +97,9 @@ The complete cleaned dataset in .JSON format can be found on Yandex Disk at http
    - Then, user requests are translated into Japanese using the Yandex Translate API.
    - The translated request and context from the corresponding JSON files are sent to the fine-tuned Yandex GPT for a response.
 
-3. **Searching for Answers in JSON Files:**
-   - JSON files are stored in folders corresponding to the years of the data.
-   - Depending on the year selected by the user, answers are searched in the corresponding folders.
+3. **Searching for Answers in Vectorized Files at Clickhouse:**
+   - .csv files corresponding to the years of the data.
+   - Depending on the year selected by the user, answers are searched in the corresponding files.
 
 4. **Translating and Formatting Answers:**
    - The obtained answers are translated back into Russian using Yandex Translate. Special algorithms ensure that Japanese proper names are preserved in their original form.
@@ -110,3 +143,5 @@ Now your Telegram bot is ready for use. You can interact with it through Telegra
    ```sh
 Enjoy using the bot!
    ```
+
+Если у вас есть дополнительные вопросы или нужна помощь, пожалуйста, дайте знать!
