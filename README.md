@@ -17,7 +17,7 @@ This project involves the creation of a Telegram bot for analyzing Japanese medi
 ├── images
 │   ├── scheme.jpg
 ```
-![Project Structure](images/scheme.jpg)
+![Project Structure](images/scheme.jpeg)
 
 ### Data Preparation
 
