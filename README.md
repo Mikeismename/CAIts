@@ -49,24 +49,25 @@ You can view the dataset processing code in
 ```sh
 data/cleaning_data.py
 ```
-Part of the dataset used for training Yandex GPT is available in
-```sh
-data/train_GPT.json
+Dataset used for training Yandex GPT you can reach by link: 
+
+```shhttps://storage.yandexcloud.net/catbot/for_training.jsonl?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJEStKDceLdEPwnh0Yw2qOl%2F20240621%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20240621T102832Z&X-Amz-Expires=2592000&X-Amz-Signature=768CCD90746BE7C29887620216283CBC63CD2D24123C1569BAFDBCA25EBDA070&X-Amz-SignedHeaders=host
 ```
 
-The complete cleaned dataset in .csv format can be found on 
+The complete cleaned dataset in .csv format can be found on
 ```sh
 data/ja
 ```
 
 ### Vectorization of Cleaned Data
-After cleaning the data, we used the `transformers` library to vectorize the text data. This step is crucial for converting textual information into numerical vectors that can be used for various NLP tasks, including semantic search and information retrieval.
+
+After cleaning the data, we used the `cl-tohoku/bert-base-japanese` library to vectorize the text data. This step is crucial for converting textual information into numerical vectors that can be used for various NLP tasks, including semantic search and information retrieval.
 
 
 You can view the vectorisation processing code in
 
 ```sh
-data/data_embedded.py
+
 ```
 
 ### Technical Implementation
