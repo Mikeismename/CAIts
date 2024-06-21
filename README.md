@@ -128,10 +128,19 @@ You can view the vectorisation processing code in
    python app.py
    ```
 
-Now your Telegram bot is ready for use. You can interact with it through Telegram by sending requests and receiving information based on data from JSON files.
+
+### Installation with Docker
+
+Run:
+
+   ```sh
+git clone https://github.com/Enc0der/CAIts.git
+cd CAIts
+
+docker build -t catbot .
+docker run -d --name catbot catbot
+  ```
 
    ```sh
 Enjoy using the bot!
    ```
-
-Если у вас есть дополнительные вопросы или нужна помощь, пожалуйста, дайте знать!
