@@ -44,19 +44,7 @@ We cleaned the dataset using the following methods:
    - We used the **sudachipy** library for Japanese text tokenization. This allowed us to properly segment the text into meaningful units.
    - We employed the **fuzzywuzzy** library for deduplication and similarity checks to ensure the uniqueness of the cleaned text.
 
-### Additional Libraries Used:
-```python
-import os
-import hashlib
-from bs4 import BeautifulSoup, Comment
-import unicodedata
-from warcio.archiveiterator import ArchiveIterator
-import re
-import csv
-from sudachipy import tokenizer, dictionary
-from datetime import datetime
-from fuzzywuzzy import fuzz
-```
+
 You can view the dataset processing code in
 ```sh
 data/cleaning_data.py
