@@ -56,7 +56,7 @@ Dataset used for training Yandex GPT you can reach by link:
 
 The complete cleaned dataset in .csv format can be found on
 ```sh
-data/ja
+https://drive.google.com/drive/folders/1ybvEpS90Qhk9_JR6OqnoefqV3hLu8suI?usp=sharing
 ```
 
 ### Vectorization of Cleaned Data
