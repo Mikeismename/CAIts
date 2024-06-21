@@ -52,7 +52,7 @@ data/cleaning_data.py
 Dataset used for training Yandex GPT you can reach by link: 
 
 ```sh
-shhttps://storage.yandexcloud.net/catbot/for_training.jsonl?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJEStKDceLdEPwnh0Yw2qOl%2F20240621%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20240621T102832Z&X-Amz-Expires=2592000&X-Amz-Signature=768CCD90746BE7C29887620216283CBC63CD2D24123C1569BAFDBCA25EBDA070&X-Amz-SignedHeaders=host
+https://storage.yandexcloud.net/catbot/for_training.jsonl?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJEStKDceLdEPwnh0Yw2qOl%2F20240621%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20240621T102832Z&X-Amz-Expires=2592000&X-Amz-Signature=768CCD90746BE7C29887620216283CBC63CD2D24123C1569BAFDBCA25EBDA070&X-Amz-SignedHeaders=host
 ```
 
 The complete cleaned dataset in .csv format can be found on
