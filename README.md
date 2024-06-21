@@ -68,12 +68,6 @@ https://drive.google.com/drive/folders/1ybvEpS90Qhk9_JR6OqnoefqV3hLu8suI?usp=sha
 After cleaning the data, we used the `cl-tohoku/bert-base-japanese` library to vectorize the text data. This step is crucial for converting textual information into numerical vectors that can be used for various NLP tasks, including semantic search and information retrieval.
 
 
-You can view the vectorisation processing code in
-
-```sh
-
-```
-
 ### Technical Implementation
 
 1. **Telegram Bot Initialization:**
