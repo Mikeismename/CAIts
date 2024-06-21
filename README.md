@@ -10,9 +10,12 @@ This project involves the creation of a Telegram bot for analyzing Japanese medi
 .
 ├── config.json
 ├── app.py
+├── README.md
 ├── requirements.txt
+├── .gitignore
 ├── data
 │   ├── cleaning_data.py
+│   ├── clickhouse.py
 │   └── train2019.json
 ├── images
 │   ├── scheme.jpg
